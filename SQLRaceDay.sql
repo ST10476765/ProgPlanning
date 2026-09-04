@@ -151,6 +151,7 @@ Select * from Event;
 
 
 -- Participant
+--added insert sample for the participant table
 INSERT INTO Participant (ParticipantName, CellNumber, Email, RaceNumber, UserID)
 VALUES ('Thabo Nkosi', '0833334444', 'thabo@mail.com', 'R001', 2);
 
