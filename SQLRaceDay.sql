@@ -49,7 +49,7 @@ CREATE TABLE Category (
 
 
 
--- event table
+--created event table
 CREATE TABLE Event (
     EventID INT PRIMARY KEY IDENTITY(1,1),
     EventName VARCHAR(100) NOT NULL,
