@@ -4,6 +4,7 @@ create database Prog;
 use Prog;
 
 -- creating users table
+craeted users table with a primary key
 CREATE TABLE Users (
     UserID INT PRIMARY KEY IDENTITY(1,1),
     UserName VARCHAR(100) NOT NULL,
