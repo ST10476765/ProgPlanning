@@ -68,6 +68,7 @@ CREATE TABLE Event (
 
 
 -- participant table
+-- user is a foreign key on the participant table
 CREATE TABLE Participant (
     ParticipantID INT PRIMARY KEY IDENTITY(1,1),
     ParticipantName VARCHAR(100) NOT NULL,
