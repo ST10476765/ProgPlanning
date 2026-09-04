@@ -1,6 +1,6 @@
 --Crating a database
 create database Prog;
-
+-- to use database
 use Prog;
 
 --All these tables can be found on the ERD/ match the erd
