@@ -55,7 +55,7 @@ CREATE TABLE Event (
     EventName VARCHAR(100) NOT NULL,
     EventDescription VARCHAR(255),
     EventType VARCHAR(50),
-    EventDate DATE NOT NULL,
+    EventDate DATE NOT NULL,-- critical column
     PlaceOfTheEvent VARCHAR(100),
     CategoryID INT NOT NULL,
     FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID)
