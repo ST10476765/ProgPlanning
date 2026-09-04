@@ -40,7 +40,7 @@ CREATE TABLE Category (
     CategoryID INT PRIMARY KEY IDENTITY(1,1),
     CategoryDescription VARCHAR(100) NOT NULL,
     Distance VARCHAR(50),
-    Item1 VARCHAR(50),
+    Item1 VARCHAR(50), -- has no use and meaning, its a miskate
     OrganiserID INT NOT NULL,
     FOREIGN KEY (OrganiserID) REFERENCES Organiser(OrganiserID)
 );
