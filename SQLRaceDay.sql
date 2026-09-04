@@ -87,6 +87,7 @@ CREATE TABLE Participant (
 
 
 
+
 -- enrollment tables
 CREATE TABLE Enrollment (
     EnrollmentID INT PRIMARY KEY IDENTITY(1,1),
