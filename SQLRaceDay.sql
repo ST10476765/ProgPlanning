@@ -9,7 +9,8 @@ CREATE TABLE Users (
     UserName VARCHAR(100) NOT NULL,
     UserEmail VARCHAR(100) UNIQUE NOT NULL,
     HashedPassword VARCHAR(255) NOT NULL,
-    Role VARCHAR(20) NOT NULL -- role = Organiser or Participan
+    Role VARCHAR(20) NOT NULL -- -- There are two roles, Participant and Organiser
+);
 );
 
 
