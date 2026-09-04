@@ -13,4 +13,5 @@ Organizer: This person sets up the races, adds all the racers, and checks the re
 
 Participant: This is the runner/cyclist. They sign up for races, check their race info, and see how they did after the race. They mostly use the system to register and view results.
 
-#YouTube Link: 
+
+#YouTube Link: https://youtu.be/-pB8L9Gj8Us
