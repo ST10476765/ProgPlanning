@@ -144,6 +144,7 @@ select * from Category;
 
 -- EVENT
 -- add isert data sample for the event
+-- updated to have real event names
 INSERT INTO Event (EventName, EventDescription, EventType, EventDate, PlaceOfTheEvent, CategoryID)
 VALUES ('Joburg Marathon', 'Annual city marathon', 'Run', '2026-10-15', 'Johannesburg', 1);
 
