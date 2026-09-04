@@ -3,6 +3,8 @@ create database Prog;
 
 use Prog;
 
+--All these tables can be found on the ERD/ match the erd
+
 -- creating users table
 --craeted users table with a primary key
 CREATE TABLE Users (
