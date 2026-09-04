@@ -3,6 +3,9 @@
 #CI and CD screenShot
 <img width="685" height="501" alt="image" src="https://github.com/user-attachments/assets/9c9dec1f-d1f5-469d-b645-ef53e3b5ecc8" />
 
+<img width="1462" height="717" alt="image" src="https://github.com/user-attachments/assets/488615b5-6a6d-4d62-97d9-a20d7612ca4e" />
+
+
 #Brief Description of the System
 
 The RaceDay System is a website app that helps manage race events. It’s used to register runners and cyclists, keep track of who’s running, and show results after the race. The system makes everything easier for both the people running the race and the ones organizing it. It also uses CI/CD to make sure updates and changes go smooth without breaking stuff.
