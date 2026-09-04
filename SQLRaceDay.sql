@@ -116,6 +116,7 @@ CREATE TABLE Result (
 
 --Insert for the tables
 -- USERS
+--add insert for user table
 INSERT INTO Users (UserName, UserEmail, HashedPassword, Role)
 VALUES ('Juice Wrld ', 'jwrld@raceday.com', 'hashed123', 'Organiser'),
        ('Cristiano Ronaldo', 'Cr7@mail.com', 'pass123', 'Participant');
