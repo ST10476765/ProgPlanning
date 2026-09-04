@@ -10,7 +10,7 @@ use Prog;
 CREATE TABLE Users (
     UserID INT PRIMARY KEY IDENTITY(1,1),
     UserName VARCHAR(100) NOT NULL,
-    UserEmail VARCHAR(100) UNIQUE NOT NULL,--Updated
+    UserEmail VARCHAR(100) UNIQUE NOT NULL,--Updated --Unique Constraint
     HashedPassword VARCHAR(255) NOT NULL,
     Role VARCHAR(20) NOT NULL -- There are two roles, Participant and Organiser
 );
