@@ -75,7 +75,7 @@ CREATE TABLE Event (
 --adding OrganiserId in the event table 
 ALTER TABLE Event
 ADD OrganiserID INT NOT NULL
-    CONSTRAINT DF_Event_Organiser DEFAULT 1;
+    CONSTRAINT DF_Event_Organiser DEFAULT 1; -- added the organiserId to the event table to meet assignment specifications
 
 ALTER TABLE Event
 ADD CONSTRAINT FK_Event_Organiser FOREIGN KEY (OrganiserID)
