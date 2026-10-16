@@ -24,14 +24,15 @@ Participant: This is the runner/cyclist. They sign up for races, check their rac
 
 
 
+
+
 #PART TWO 
 
 #CI and CD screenshot for part two
 
 
-<img width="1451" height="880" alt="image" src="https://github.com/user-attachments/assets/a6844f13-fbb8-4056-8152-49ce5f7b03ec" />
+<img width="1425" height="70" alt="image" src="https://github.com/user-attachments/assets/e407ae9d-3601-4ebc-8ce5-588b732ff6ef" />
 
 
-<img width="1552" height="601" alt="image" src="https://github.com/user-attachments/assets/6c2cf441-7cb2-4e03-98be-5fbe8c56ec6c" />
 
 
