@@ -31,7 +31,7 @@ Gender VARCHAR(20) NULL;
 CREATE TABLE Organiser (
     OrganiserID INT PRIMARY KEY IDENTITY(1,1),
     OrganiserName VARCHAR(100) NOT NULL,
-    CellNumber VARCHAR(20),
+    CellNumber VARCHAR(20), -- also part of the userprofile functionality
     Email VARCHAR(100),
     UserID INT NOT NULL,
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
