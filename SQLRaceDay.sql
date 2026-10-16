@@ -20,7 +20,7 @@ Add Age Int NULL,
 Gender VARCHAR(20) NULL;
 
 -- Add Age and Gender to Participant
-Alter Table Participant
+Alter Table Participant-- added the age and gender attributes for the userprofile functinality on the participant table
 Add Age Int NULL,
 Gender VARCHAR(20) NULL;
 
