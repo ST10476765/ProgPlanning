@@ -14,7 +14,8 @@ CREATE TABLE Users (
 
 
 -- Add Age and Gender to Organiser
-Alter table Organiser
+
+Alter table Organiser --add the age and gender attributes for the UserProfile functionality on the organiser table
 Add Age Int NULL,
 Gender VARCHAR(20) NULL;
 
