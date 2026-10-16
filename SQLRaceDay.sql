@@ -1,23 +1,27 @@
 --Crating a database
 create database Prog;
--- to use database
+
 use Prog;
 
---All these tables can be found on the ERD/ match the erd
-
 -- creating users table
---craeted users table with a primary key
 CREATE TABLE Users (
     UserID INT PRIMARY KEY IDENTITY(1,1),
     UserName VARCHAR(100) NOT NULL,
-    UserEmail VARCHAR(100) UNIQUE NOT NULL,--Updated --Unique Constraint
+    UserEmail VARCHAR(100) UNIQUE NOT NULL,
     HashedPassword VARCHAR(255) NOT NULL,
     Role VARCHAR(20) NOT NULL -- There are two roles, Participant and Organiser
 );
- --removed an extra );
 
 
+-- Add Age and Gender to Organiser
+Alter table Organiser
+Add Age Int NULL,
+Gender VARCHAR(20) NULL;
 
+-- Add Age and Gender to Participant
+Alter Table Participant
+Add Age Int NULL,
+Gender VARCHAR(20) NULL;
 
 
 
@@ -40,29 +44,41 @@ CREATE TABLE Category (
     CategoryID INT PRIMARY KEY IDENTITY(1,1),
     CategoryDescription VARCHAR(100) NOT NULL,
     Distance VARCHAR(50),
-    Item1 VARCHAR(50), -- has no use and meaning, its a miskate
+    Item1 VARCHAR(50),
     OrganiserID INT NOT NULL,
     FOREIGN KEY (OrganiserID) REFERENCES Organiser(OrganiserID)
 );
 
+--deleting unwanted column item1
+ALTER TABLE Category
+DROP COLUMN Item1;
 
 
 
 
 
 
---created event table
+
+-- event table
 CREATE TABLE Event (
     EventID INT PRIMARY KEY IDENTITY(1,1),
     EventName VARCHAR(100) NOT NULL,
     EventDescription VARCHAR(255),
     EventType VARCHAR(50),
-    EventDate DATE NOT NULL,-- critical column
+    EventDate DATE NOT NULL,
     PlaceOfTheEvent VARCHAR(100),
     CategoryID INT NOT NULL,
     FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID)
 );
 
+--adding OrganiserId in the event table 
+ALTER TABLE Event
+ADD OrganiserID INT NOT NULL
+    CONSTRAINT DF_Event_Organiser DEFAULT 1;
+
+ALTER TABLE Event
+ADD CONSTRAINT FK_Event_Organiser FOREIGN KEY (OrganiserID)
+REFERENCES Organiser(OrganiserID);
 
 
 
@@ -70,7 +86,6 @@ CREATE TABLE Event (
 
 
 -- participant table
--- user is a foreign key on the participant table
 CREATE TABLE Participant (
     ParticipantID INT PRIMARY KEY IDENTITY(1,1),
     ParticipantName VARCHAR(100) NOT NULL,
@@ -80,7 +95,6 @@ CREATE TABLE Participant (
     UserID INT NOT NULL,
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
-
 
 
 
@@ -99,7 +113,10 @@ CREATE TABLE Enrollment (
     FOREIGN KEY (EventID) REFERENCES Event(EventID)
 );
 
-
+--adding Category id
+ALTER TABLE Enrollment
+ADD CategoryID INT NOT NULL DEFAULT 1
+FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID);
 
 
 
@@ -120,7 +137,6 @@ CREATE TABLE Result (
 
 --Insert for the tables
 -- USERS
---add insert for user table
 INSERT INTO Users (UserName, UserEmail, HashedPassword, Role)
 VALUES ('Juice Wrld ', 'jwrld@raceday.com', 'hashed123', 'Organiser'),
        ('Cristiano Ronaldo', 'Cr7@mail.com', 'pass123', 'Participant');
@@ -131,6 +147,13 @@ select * from Users;
 INSERT INTO Organiser (OrganiserName, CellNumber, Email, UserID)
 VALUES ('Juice Wrld', '0821112222', 'jwrld@raceday.com', 1);
 
+SELECT * FROM Organiser WHERE OrganiserID = 1;
+
+INSERT INTO Organiser (OrganiserName, CellNumber, Email, UserID)
+VALUES ('Test Organiser', '0839998888', 'test@raceday.com', 9);
+
+
+
 
 select * from Organiser;
 
@@ -139,15 +162,21 @@ select * from Organiser;
 INSERT INTO Category (CategoryDescription, Distance, Item1, OrganiserID)
 VALUES ('10km Run', '10km', 'Under 20', 1);
 
+INSERT INTO Category (CategoryDescription, Distance, OrganiserID)
+VALUES ('10km Run', '10km', 1);
+
 select * from Category;
+
+SELECT * FROM Category WHERE CategoryID = 3;
+
+INSERT INTO Category (CategoryDescription, Distance, Item1, OrganiserID)
+VALUES ('Half Marathon', '21km', 'Adults', 2);
 
 
 
 
 
 -- EVENT
--- add isert data sample for the event
--- updated to have real event names
 INSERT INTO Event (EventName, EventDescription, EventType, EventDate, PlaceOfTheEvent, CategoryID)
 VALUES ('Joburg Marathon', 'Annual city marathon', 'Run', '2026-10-15', 'Johannesburg', 1);
 
@@ -156,7 +185,6 @@ Select * from Event;
 
 
 -- Participant
---added insert sample for the participant table
 INSERT INTO Participant (ParticipantName, CellNumber, Email, RaceNumber, UserID)
 VALUES ('Thabo Nkosi', '0833334444', 'thabo@mail.com', 'R001', 2);
 
@@ -181,6 +209,8 @@ select * from Result;
 
 
 
+SELECT * FROM Category WHERE CategoryID = 1;
+SELECT * FROM Organiser WHERE OrganiserID = 1;
 
 
 
