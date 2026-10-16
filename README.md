@@ -20,3 +20,11 @@ Participant: This is the runner/cyclist. They sign up for races, check their rac
 
 
 #YouTube Link: https://youtu.be/-pB8L9Gj8Us
+
+
+PART TWO 
+CI and CD screenshot for part two
+
+
+<img width="1451" height="880" alt="image" src="https://github.com/user-attachments/assets/a6844f13-fbb8-4056-8152-49ce5f7b03ec" />
+
