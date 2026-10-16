@@ -90,7 +90,7 @@ REFERENCES Organiser(OrganiserID);
 CREATE TABLE Participant (
     ParticipantID INT PRIMARY KEY IDENTITY(1,1),
     ParticipantName VARCHAR(100) NOT NULL,
-    CellNumber VARCHAR(20),
+    CellNumber VARCHAR(20), -- also part of the userProfile functionality/endpoint
     Email VARCHAR(100),
     RaceNumber VARCHAR(20),
     UserID INT NOT NULL,
