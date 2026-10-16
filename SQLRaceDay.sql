@@ -115,7 +115,7 @@ CREATE TABLE Enrollment (
 );
 
 --adding Category id
-ALTER TABLE Enrollment
+ALTER TABLE Enrollment -- added the categoryID to the enrollment table to meet specification of the assignment
 ADD CategoryID INT NOT NULL DEFAULT 1
 FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID);
 
