@@ -52,7 +52,7 @@ CREATE TABLE Category (
 
 --deleting unwanted column item1
 ALTER TABLE Category
-DROP COLUMN Item1;
+DROP COLUMN Item1; --removed item1 column because it was a mistake
 
 
 
