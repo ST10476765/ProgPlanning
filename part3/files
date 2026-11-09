@@ -6,3 +6,60 @@ public IActionResult GetResultsByEvent(int eventId)
 
     return Ok(results);
 }
+
+
+
+
+        // NEWLY ADDED, Get Enrollments By User
+
+        public List<Enrollment> GetEnrollmentsByUser(int userId)
+        {
+            List<Enrollment> enrollments =
+                new List<Enrollment>();
+
+            using (SqlConnection conn =
+                new SqlConnection(connection_string))
+            {
+                string query =
+                    "SELECT * FROM Enrollment WHERE UserID=@UserID";
+
+                SqlCommand cmd =
+                    new SqlCommand(query, conn);
+
+                cmd.Parameters.AddWithValue(
+                    "@UserID",
+                    userId
+                );
+
+                conn.Open();
+
+                SqlDataReader reader =
+                    cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    enrollments.Add(new Enrollment
+                    {
+                        EnrollmentID =
+                            (int)reader["EnrollmentID"],
+
+                        EnrollmentDate =
+                            (DateTime)reader["EnrollmentDate"],
+
+                        EnrollmentStatus =
+                            reader["EnrollmentStatus"].ToString(),
+
+                        UserID =
+                            (int)reader["UserID"],
+
+                        EventID =
+                            (int)reader["EventID"],
+
+                        CategoryID =
+                            (int)reader["CategoryID"]
+                    });
+                }
+            }
+
+            return enrollments;
+        }
