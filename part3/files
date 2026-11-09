@@ -63,3 +63,15 @@ public IActionResult GetResultsByEvent(int eventId)
 
             return enrollments;
         }
+
+
+
+ [HttpGet("user/{userId}")]
+ public IActionResult GetEnrollmentsByUser(int userId)
+ {
+     var enrollments =
+         _db.GetEnrollmentsByUser(userId);
+
+     return Ok(enrollments);
+ }
+
