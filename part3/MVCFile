@@ -33,6 +33,23 @@ namespace RaceDay_MVC.Controllers
         }//end of index method
 
 
+namespace RaceDay_MVC.Models
+{
+    public class DashboardEvent
+    {
+        public string EventName { get; set; }
+
+        public DateTime EventDate { get; set; }
+
+        public string PlaceOfTheEvent { get; set; }
+
+        //Enrollment Count
+        public int EnrollmentCount { get; set; }
+
+    }
+}
+
+
     }// end of class
 
 }// end of namespace
