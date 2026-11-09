@@ -50,6 +50,89 @@ namespace RaceDay_MVC.Models
 }
 
 
+
+
+namespace RaceDay_MVC.Controllers
+{
+    public class ParticipantController : Controller
+    {
+
+
+
+        // View Profile
+        //View Profile Using Session UserID
+        public async Task<IActionResult> Profile()
+        {
+            string userId =
+                HttpContext.Session.GetString("UserID");
+
+            if (string.IsNullOrEmpty(userId))
+            {
+                return RedirectToAction(
+                    "Login",
+                    "Authe"
+                );
+            }
+
+            HttpClient client = new HttpClient();
+
+            var response =
+                await client.GetAsync(
+                    $"https://localhost:7140/api/Authe/profile/participant/{userId}"
+                );
+
+            var json =
+                await response.Content.ReadAsStringAsync();
+
+            if (!response.IsSuccessStatusCode)
+            {
+                TempData["Message"] = json;
+
+                return RedirectToAction(
+                    "Index",
+                    "Home"
+                );
+            }
+
+            var participant =
+                JsonSerializer.Deserialize<Participant>(
+                    json,
+                    new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
+
+            return View(participant);
+        }
+
+
+        // Update Profile
+        [HttpPost]
+        public async Task<IActionResult> Profile(Participant participant)
+        {
+            HttpClient client = new HttpClient();
+
+            string url =
+                $"https://localhost:7140/api/Authe/profile/participant/update?" +
+                $"userId={participant.UserID}" +
+                $"&age={participant.Age}" +
+                $"&gender={participant.Gender}" +
+                $"&cellnumber={participant.CellNumber}";
+
+            var response =
+                await client.PutAsync(url, null);
+
+            if (response.IsSuccessStatusCode)
+            {
+                TempData["Message"] =
+                    "Profile Updated Successfully";
+            }
+
+            return RedirectToAction("Profile");
+        }
+    }
+}
+
     }// end of class
 
 }// end of namespace
