@@ -12,6 +12,7 @@
 
 The RaceDay System is a website app that helps manage race events. It’s used to register runners and cyclists, keep track of who’s running, and show results after the race. The system makes everything easier for both the people running the race and the ones organizing it. It also uses CI/CD to make sure updates and changes go smooth without breaking stuff.
 
+
 #The Two roles
 
 Organizer: This person sets up the races, adds all the racers, and checks the results. They basically run the whole thing and make sure everything goes right.
@@ -20,6 +21,11 @@ Participant: This is the runner/cyclist. They sign up for races, check their rac
 
 
 #YouTube Link: https://youtu.be/-pB8L9Gj8Us
+
+
+
+
+
 
 
 
