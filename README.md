@@ -50,6 +50,23 @@ https://youtu.be/VDEeszBojVg
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 #PART THREE POE
+
+CI and CD screenshot for part three
+
+
+<img width="880" height="87" alt="image" src="https://github.com/user-attachments/assets/f99ddf55-4788-4f9e-89d9-65711bf2bd7a" />
+
 
 
