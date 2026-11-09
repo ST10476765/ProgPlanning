@@ -57,8 +57,6 @@ namespace RaceDay_MVC.Controllers
     public class ParticipantController : Controller
     {
 
-
-
         // View Profile
         //View Profile Using Session UserID
         public async Task<IActionResult> Profile()
@@ -136,4 +134,28 @@ namespace RaceDay_MVC.Controllers
     }// end of class
 
 }// end of namespace
+
+
+namespace RaceDay_MVC.Models
+{
+    public class Participant
+    {
+        public int ParticipantID { get; set; }
+
+        public string ParticipantName { get; set; }
+
+        public string CellNumber { get; set; }
+
+        public string Email { get; set; }
+
+        public string RaceNumber { get; set; }
+
+        public int Age { get; set; }
+
+        public string Gender { get; set; }
+
+        public int UserID { get; set; }
+    }
+}
+
 
