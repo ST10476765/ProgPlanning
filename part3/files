@@ -9,6 +9,62 @@ public IActionResult GetResultsByEvent(int eventId)
 
 
 
+        // Added, Get Results By Event
+        public List<Result> GetResultsByEvent(int eventId)
+        {
+            List<Result> results = new List<Result>();
+
+            using (SqlConnection connect =
+                new SqlConnection(connection_string))
+            {
+                string query = @"
+                            SELECT r.*
+                            FROM Result r
+                            INNER JOIN Enrollment e
+                            ON r.EnrollmentID = e.EnrollmentID
+                            WHERE e.EventID = @EventID";
+
+                SqlCommand cmd =
+                    new SqlCommand(query, connect);
+
+                cmd.Parameters.AddWithValue(
+                    "@EventID",
+                    eventId
+                );
+
+                connect.Open();
+
+                SqlDataReader reader =
+                    cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    results.Add(new Result
+                    {
+                        ResultID =
+                            (int)reader["ResultID"],
+
+                        EnrollmentID =
+                            (int)reader["EnrollmentID"],
+
+                        FinishTime =
+                            (TimeSpan)reader["FinishTime"],
+
+                        PodiumPlacement =
+                            (int)reader["PodiumPlacement"]
+                    });
+                }
+            }
+
+            return results;
+        }
+
+
+
+    }//end of class
+}//end of namespace
+
+
 
         // NEWLY ADDED, Get Enrollments By User
 
@@ -74,4 +130,6 @@ public IActionResult GetResultsByEvent(int eventId)
 
      return Ok(enrollments);
  }
+
+
 
