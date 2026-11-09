@@ -1,1 +1,39 @@
+using Microsoft.AspNetCore.Mvc;
+using RaceDay_MVC.Models;
+using System.Text.Json;
+
+namespace RaceDay_MVC.Controllers
+{
+    public class DashboardController : Controller
+    {//start of class
+
+        public async Task<IActionResult> Index()
+        {
+            HttpClient client = new HttpClient();
+
+            // Get all events
+            var response =
+                await client.GetAsync(
+                    "https://localhost:7140/api/Event/all"
+                );
+
+                var json =
+                await response.Content.ReadAsStringAsync();
+
+                var events =
+                JsonSerializer.Deserialize<List<Event>>(
+                    json,
+                    new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
+
+                  return View(events);
+
+        }//end of index method
+
+
+    }// end of class
+
+}// end of namespace
 
