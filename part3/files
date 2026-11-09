@@ -1,1 +1,8 @@
+// ADDED, View Results For A Specific Event
+[HttpGet("event/{eventId}")]
+public IActionResult GetResultsByEvent(int eventId)
+{
+    var results = _db.GetResultsByEvent(eventId);
 
+    return Ok(results);
+}
