@@ -71,12 +71,35 @@ CI and CD screenshot for part three
 
 
 
-YouTube Video Link:
+YouTube Video Link part 3:
 
 https://youtu.be/cpD4v12oqg0
 
 
 
 
+
+
+
+RaceDay MVC Application Description
+
+
+RaceDay is a web-based race event management system developed using ASP.NET Core MVC and a Web API. The system supports two user roles, namely Organisers and Participants. Organisers are able to create and manage events, categories, participant enrolments, and race results, while Participants are able to browse upcoming events, enrol in races, view their results, and manage their profiles. The MVC application communicates with the API for all data operations and business logic, with session management being used to maintain authentication and role-based access throughout the system. The application was designed to provide a simple and user-friendly platform for managing race events from registration through to results publication.
+
+
+
+
+
+Key Features
+
+-User Registration and Login
+-Role-Based Navigation (Organiser and Participant)
+-Event Management (Create, Edit, Delete)
+-Category Management
+-Enrollment Management
+-Race Results Management
+-Participant Profiles
+-Dashboard with Event Summaries
+-Responsive Bootstrap UI with RaceDay Branding
 
 
