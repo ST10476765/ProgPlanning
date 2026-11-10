@@ -90,7 +90,7 @@ RaceDay is a web-based race event management system developed using ASP.NET Core
 
 
 
-Key Features
+KEY FEATURES
 
 -User Registration and Login
 -Role-Based Navigation (Organiser and Participant)
@@ -101,5 +101,6 @@ Key Features
 -Participant Profiles
 -Dashboard with Event Summaries
 -Responsive Bootstrap UI with RaceDay Branding
+
 
 
